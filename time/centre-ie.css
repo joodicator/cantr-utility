@@ -1,0 +1,10 @@
+#centre1 {
+    position: absolute;
+    top:50%; left:50%;
+}
+
+#centre2 {
+    position: relative;
+    top:-50%; left:-50%;
+    display: block;
+}

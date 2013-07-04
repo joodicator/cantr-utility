@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>Cantr Time Period Converter</title>
+    <link rel="stylesheet" href="centre.css">
+    <!--[if lte IE 7]><link rel="stylesheet" href="centre-ie.css"><![endif]-->
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <div id="centre1"><div id="centre2">
+        <p style="text-align:justify">
+            This page converts between lengths of time expressed in Cantr form (used in-game) and
+            those expressed in Earth form (used out-of-game).
+        </p>
+        <table id="main">
+            <thead>
+                <tr>
+                    <td></td>
+                    <td>Days</td>
+                    <td>Hours</td>
+                    <td>Minutes</td>
+                    <td>Seconds</td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Earth form</td>
+                    <td class="field"><input type="text" id="earth-days"></td>
+                    <td class="field"><input type="text" id="earth-hours"></td>
+                    <td class="field"><input type="text" id="earth-minutes"></td>
+                    <td class="field"><input type="text" id="earth-seconds"></td>
+                    <td class="button"><button id="earth-convert">Convert</button></td>
+                </tr>
+                <tr>
+                    <td>Cantr form</td>
+                    <td class="field"><input type="text" id="cantr-days"></td>
+                    <td class="field"><input type="text" id="cantr-hours"></td>
+                    <td class="field"><input type="text" id="cantr-minutes"></td>
+                    <td class="field"><input type="text" id="cantr-seconds"></td>
+                    <td class="button"><button id="cantr-convert">Convert</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            It is based on the following facts:
+        </p>
+        <p>
+            1 Cantr day = 8 Cantr hours = 1 Earth day<br>
+            1 Cantr hour = 36 Cantr minutes = 3 Earth hours<br>
+            1 Cantr minute = 60 Cantr seconds = 5 Earth minutes<br>
+            1 Cantr second = 5 Earth seconds
+        </p>
+    </div></div>
+</body>
