@@ -3,18 +3,10 @@
     // Utility
     function localTime () { return (new Date).valueOf(); }
 
-    var remoteError = -(4*60 + 20)*1000;
+    var remoteError = 0;
 
     function remoteTime () {
         return localTime() - localOffset - remoteError;
-/*
-        var now = localTime() - localOffset, date = new Date(now);
-        var BSTStart = new Date(Date.UTC(date.getUTCFullYear(), 2, 31, 1)); // 01:00 on last day of March for current year (UTC)
-        BSTStart.setUTCDate(BSTStart.getUTCDate() - BSTStart.getUTCDay()); // Last Sunday of current month.
-        var BSTEnd = new Date(Date.UTC(date.getUTCFullYear(), 9, 31, 1)); // 01:00 on last day of October for current year (UTC)
-        BSTEnd.setUTCDate(BSTEnd.getUTCDate() - BSTEnd.getUTCDay()); // Last Sunday of current month.
-        return ((now >= BSTStart.valueOf()) && (now < BSTEnd.valueOf())) ? (now + 3600000) : now;
-*/
     }
 
     function formatPeriod (period) {
@@ -22,7 +14,7 @@
         var period = new Date(period);
         return [pad(period.getUTCHours()), pad(period.getUTCMinutes()), pad(period.getUTCSeconds())].join(":");
     }
-  
+
     // Sychronise
     var localOffset = 0;
     this.sync = function (remoteTime) { localOffset = localTime() - remoteTime; };
@@ -33,7 +25,7 @@
 
     // Initialise
     window.onload = function () {
-        
+
         // Timers
         timers = timers.map(function (spec) { return new function () {
             this.id = function () { return spec.id; };
@@ -47,7 +39,7 @@
                 });
             };
         } });
-        
+
         // Hidden Listing
         var hidden = new function () {
             var tray = document.getElementById("show_tray");
@@ -71,7 +63,7 @@
                 show.className = "closed";
             };
         };
-        
+
         // Visible Listing
         var listing = new function () {
             var table = document.getElementById("main");
