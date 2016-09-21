@@ -1,4 +1,3 @@
-<?php include("hit_increment.php"); ?>
 <html>
   <head>
     <title>Cantr Item List Formatter</title>
